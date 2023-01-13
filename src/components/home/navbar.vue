@@ -10,6 +10,7 @@
       </router-link>
 
       <div class="order-lg-2 nav-btns">
+        <router-link to="/cart">
         <button type="button" class="btn position-relative">
           <i class="fa fa-shopping-cart"></i>
           <span
@@ -17,6 +18,7 @@
             >5</span
           >
         </button>
+      </router-link>
         <button type="button" class="btn position-relative" @click="checkLogin">
           <i class="fa fa-heart"></i>
           <span
