@@ -1,8 +1,8 @@
 <template>
-    <navbar/>
+   
   <headers/>
-  <collection/>
-  <special/>
+  <!-- <categories/> -->
+  <products/>
   <offers/>
   <blogs/>
   <about/>
@@ -12,10 +12,9 @@
 </template>
 <script>
 import headers from '../components/home/header.vue'
-import navbar from '../components/home/navbar.vue'
 import footers from '../components/home/footer.vue'
-import collection from '../components/home/collection.vue'
-import special from '../components/home/special.vue'
+import categories from '../components/home/categories/categories.vue'
+import products from '../components/home/product_collections/products.vue'
 import popular from '../components/home/popular.vue'
 import offers from '../components/home/offers.vue'
 import blogs from '../components/home/blogs.vue'
@@ -24,10 +23,9 @@ import news from '../components/home/news.vue'
 export default{
     name:'home',
     components:{
-    navbar,
     headers,
-    collection,
-    special,
+    categories,
+    products,
     offers,
     blogs,
     about,
@@ -45,7 +43,7 @@ export default{
 :root{
     --lg-font: 'Kaisei Tokumin', serif;
     --sm-font: 'Poppins', sans-serif;
-    --pink: rgb(248, 52, 111);;
+    --pink: rgb(248, 52, 111);
 }
 body{
     font-family: var(--sm-font);
