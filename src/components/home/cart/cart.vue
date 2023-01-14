@@ -1,235 +1,289 @@
 <template>
- <div class="container">
-  <div class="card">
+  <div class="container">
+    <div class="card">
+      <div class="row">
+        <div class="cart">
+          <div class="title">
             <div class="row">
-                <div class="col-md-8 cart">
-                    <div class="title">
-                        <div class="row">
-                            <div class="col"><h4><b>Shopping Cart</b></h4></div>
-                            <div class="col align-self-center text-right text-muted">3 items</div>
-                        </div>
-                    </div>    
-                    <div class="row border-top border-bottom">
-                        <div class="row main align-items-center">
-                            <div class="col-2"><img class="img-fluid" src="https://i.imgur.com/1GrakTl.jpg"></div>
-                            <div class="col">
-                                <div class="row text-muted">Shirt</div>
-                                <div class="row">Cotton T-shirt</div>
-                            </div>
-                            <div class="col">
-                                <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
-                            </div>
-                            <div class="col">&euro; 44.00 <span class="close">&#10005;</span></div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="row main align-items-center">
-                            <div class="col-2"><img class="img-fluid" src="https://i.imgur.com/ba3tvGm.jpg"></div>
-                            <div class="col">
-                                <div class="row text-muted">Shirt</div>
-                                <div class="row">Cotton T-shirt</div>
-                            </div>
-                            <div class="col">
-                                <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
-                            </div>
-                            <div class="col">&euro; 44.00 <span class="close">&#10005;</span></div>
-                        </div>
-                    </div>
-                    <div class="row border-top border-bottom">
-                        <div class="row main align-items-center">
-                            <div class="col-2"><img class="img-fluid" src="https://i.imgur.com/pHQ3xT3.jpg"></div>
-                            <div class="col">
-                                <div class="row text-muted">Shirt</div>
-                                <div class="row">Cotton T-shirt</div>
-                            </div>
-                            <div class="col">
-                                <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
-                            </div>
-                            <div class="col">&euro; 44.00 <span class="close">&#10005;</span></div>
-                        </div>
-                    </div>
-                    <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Back to shop</span></div>
-                </div>
-                <div class="col-md-4 summary">
-                    <div><h5><b>Summary</b></h5></div>
-                    <hr>
-                    <div class="row">
-                        <div class="col" style="padding-left:0;">ITEMS 3</div>
-                        <div class="col text-right">&euro; 132.00</div>
-                    </div>
-                    <form>
-                        <p>SHIPPING</p>
-                        <select><option class="text-muted">Standard-Delivery- &euro;5.00</option></select>
-                        <p>GIVE CODE</p>
-                        <input id="code" placeholder="Enter your code">
-                    </form>
-                    <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
-                        <div class="col">TOTAL PRICE</div>
-                        <div class="col text-right">&euro; 137.00</div>
-                    </div>
-                    <button class="btn">CHECKOUT</button>
-                </div>
+              <div class="col">
+                <h4><b>Shopping Cart</b></h4>
+              </div>
+              <div class="col align-self-center text-right text-muted">
+                {{ cartItemCount }} Items
+              </div>
+              <div class="col align-self-center text-right text-muted">
+                <strong>Total</strong> : &euro; {{ parseInt(totalPrice) }}
+              </div>
+              <div class="col align-self-center text-right text-muted">
+                <button class="btn">CHECKOUT</button>
+              </div>
             </div>
-            
-        </div></div>
+          </div>
+          <div
+            class="row border-top border-bottom"
+            v-for="item in cartItem"
+            :key="item.product.id"
+          >
+            <div class="row main align-items-center">
+              <div class="col-2">
+                <img class="img-fluid image" :src="item.product.images[0]" />
+              </div>
+              <div class="col">
+                <div class="row">{{ item.product.title }}</div>
+              </div>
+              <div class="col">
+                <a @click="addQty(item.product.id)">+</a>
+                <a href="#" class="border">{{ item.quantity }}</a>
+                <a @click="minusQty(item.product.id)">-</a>
+              </div>
+              <div class="col">
+                &euro;
+                {{
+                  parseInt(
+                    (item.product.price -
+                      (item.product.price * item.product.discountPercentage) /
+                        100) *
+                      item.quantity
+                  )
+                }}
+              </div>
+              <div class="col">
+                <i class="fa fa-close" @click="removeCartItem(item.product)"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="back-to-shop">
+            <a href="#">&leftarrow;</a
+            ><span class="text-muted">Back to shop</span>
+          </div> -->
+        </div>
+        <!-- <div class="col-md-4 summary">
+          <div>
+            <h5><b>Summary</b></h5>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col" style="padding-left: 0">ITEMS {{cartItemCount}}</div>
+            <div class="col text-right">&euro; {{ parseInt(totalPrice) }}</div>
+          </div>
+          <form>
+            <p>SHIPPING</p>
+            <select>
+              <option class="text-muted">Standard-Delivery- &euro;5.00</option>
+            </select>
+            <p>GIVE CODE</p>
+            <input id="code" placeholder="Enter your code" />
+          </form>
+          <div
+            class="row"
+            style="border-top: 1px solid rgba(0, 0, 0, 0.1); padding: 2vh 0"
+          >
+            <div class="col">TOTAL PRICE</div>
+            <div class="col text-right">&euro; {{ parseInt(totalPrice) }}</div>
+          </div>
+          <button class="btn">CHECKOUT</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
 </template>
 
-<script >
-export default{
-    name: 'cart',
-}
+<script>
+export default {
+  name: "cart",
+  computed: {
+    cartItem() {
+      return this.$store.state.cart;
+    },
+    cartItemCount() {
+      return this.$store.getters.CartItemcount;
+    },
+    totalPrice() {
+      return this.$store.getters.TotalPrice;
+    },
+    incrementQty() {
+      return this.$store.getters.IncrementQty;
+    },
+    decrementQty() {
+      return this.$store.getters.DecrementQty;
+    },
+  },
+
+  methods: {
+    addQty(id) {
+      this.$store.commit("Increment", id);
+    },
+    minusQty(id) {
+      this.$store.commit("Decrement", id);
+    },
+    removeCartItem(product){
+        this.$store.dispatch('RemoveCartItem', product)
+    }
+  },
+};
 </script>
 <style scoped>
-
-    body{
-    background: #ddd;
-    min-height: 100vh;
-    vertical-align: middle;
-    display: flex;
-    font-family: sans-serif;
-    font-size: 0.8rem;
-    font-weight: bold;
+body {
+  background: #ddd;
+  min-height: 100vh;
+  vertical-align: middle;
+  display: flex;
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  font-weight: bold;
 }
-.container{
-    padding-top: 100px;
+i {
+  font-size: 15px;
+  padding-left: 10px;
 }
-.title{
-    margin-bottom: 5vh;
+.image {
+  height: 50px;
 }
-.card{
-    margin: auto;
-    max-width: 950px;
-    width: 90%;
-    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 1rem;
-    border: transparent;
+.container {
+  padding-top: 100px;
 }
-@media(max-width:767px){
-    .card{
-        margin: 3vh auto;
-    }
+.title {
+  margin-bottom: 5vh;
 }
-.cart{
-    background-color: #fff;
-    padding: 4vh 5vh;
-    border-bottom-left-radius: 1rem;
-    border-top-left-radius: 1rem;
+.card {
+  margin: auto;
+  max-width: 950px;
+  width: 90%;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 1rem;
+  border: transparent;
 }
-@media(max-width:767px){
-    .cart{
-        padding: 4vh;
-        border-bottom-left-radius: unset;
-        border-top-right-radius: 1rem;
-    }
+@media (max-width: 767px) {
+  .card {
+    margin: 3vh auto;
+  }
 }
-.summary{
-    background-color: #ddd;
-    border-top-right-radius: 1rem;
-    border-bottom-right-radius: 1rem;
+.cart {
+  background-color: #fff;
+  padding: 4vh 5vh;
+  border-bottom-left-radius: 1rem;
+  border-top-left-radius: 1rem;
+}
+@media (max-width: 767px) {
+  .cart {
     padding: 4vh;
-    color: rgb(65, 65, 65);
+    border-bottom-left-radius: unset;
+    border-top-right-radius: 1rem;
+  }
 }
-@media(max-width:767px){
-    .summary{
+.summary {
+  background-color: #ddd;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  padding: 4vh;
+  color: rgb(65, 65, 65);
+}
+@media (max-width: 767px) {
+  .summary {
     border-top-right-radius: unset;
     border-bottom-left-radius: 1rem;
-    }
+  }
 }
-.summary .col-2{
-    padding: 0;
+.summary .col-2 {
+  padding: 0;
 }
-.summary .col-10
-{
-    padding: 0;
-}.row{
-    margin: 0;
+.summary .col-10 {
+  padding: 0;
 }
-.title b{
-    font-size: 1.5rem;
+.row {
+  margin: 0;
 }
-.main{
-    margin: 0;
-    padding: 2vh 0;
-    width: 100%;
+.title b {
+  font-size: 1.5rem;
 }
-.col-2, .col{
-    padding: 0 1vh;
+.main {
+  margin: 0;
+  padding: 2vh 0;
+  width: 100%;
 }
-a{
-    padding: 0 1vh;
+.col-2,
+.col {
+  padding: 0 1vh;
 }
-.close{
-    margin-left: auto;
-    font-size: 0.7rem;
+a {
+  padding: 0 1vh;
 }
-img{
-    width: 3.5rem;
+.close {
+  margin-left: auto;
+  font-size: 0.7rem;
 }
-.back-to-shop{
-    margin-top: 4.5rem;
+img {
+  width: 3.5rem;
 }
-h5{
-    margin-top: 4vh;
+.back-to-shop {
+  margin-top: 4.5rem;
 }
-hr{
-    margin-top: 1.25rem;
+h5 {
+  margin-top: 4vh;
 }
-form{
-    padding: 2vh 0;
+hr {
+  margin-top: 1.25rem;
 }
-select{
-    border: 1px solid rgba(0, 0, 0, 0.137);
-    padding: 1.5vh 1vh;
-    margin-bottom: 4vh;
-    outline: none;
-    width: 100%;
-    background-color: rgb(247, 247, 247);
+form {
+  padding: 2vh 0;
 }
-input{
-    border: 1px solid rgba(0, 0, 0, 0.137);
-    padding: 1vh;
-    margin-bottom: 4vh;
-    outline: none;
-    width: 100%;
-    background-color: rgb(247, 247, 247);
+select {
+  border: 1px solid rgba(0, 0, 0, 0.137);
+  padding: 1.5vh 1vh;
+  margin-bottom: 4vh;
+  outline: none;
+  width: 100%;
+  background-color: rgb(247, 247, 247);
 }
-input:focus::-webkit-input-placeholder
-{
-      color:transparent;
+input {
+  border: 1px solid rgba(0, 0, 0, 0.137);
+  padding: 1vh;
+  margin-bottom: 4vh;
+  outline: none;
+  width: 100%;
+  background-color: rgb(247, 247, 247);
 }
-.btn{
-    background-color: #000;
-    border-color: #000;
-    color: white;
-    width: 100%;
-    font-size: 0.7rem;
-    margin-top: 4vh;
-    padding: 1vh;
-    border-radius: 0;
+input:focus::-webkit-input-placeholder {
+  color: transparent;
 }
-.btn:focus{
-    box-shadow: none;
-    outline: none;
-    box-shadow: none;
-    color: white;
-    -webkit-box-shadow: none;
-    -webkit-user-select: none;
-    transition: none; 
+.btn {
+  background-color: #000;
+  border-color: #000;
+  color: white;
+  width: 100%;
+  font-size: 0.7rem;
+  border-radius: 0;
 }
-.btn:hover{
-    color: white;
+.btn:focus {
+  box-shadow: none;
+  outline: none;
+  box-shadow: none;
+  color: white;
+  -webkit-box-shadow: none;
+  /* -webkit-user-select: none; */
+  transition: none;
 }
-a{
-    color: black; 
+.btn:hover {
+  color: white;
 }
-a:hover{
-    color: black;
-    text-decoration: none;
+a {
+  color: black;
+  cursor: context-menu;
 }
- #code{
-    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.253) , rgba(255, 255, 255, 0.185)), url("https://img.icons8.com/small/16/000000/long-arrow-right.png");
-    background-repeat: no-repeat;
-    background-position-x: 95%;
-    background-position-y: center;
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+#code {
+  background-image: linear-gradient(
+      to left,
+      rgba(255, 255, 255, 0.253),
+      rgba(255, 255, 255, 0.185)
+    ),
+    url("https://img.icons8.com/small/16/000000/long-arrow-right.png");
+  background-repeat: no-repeat;
+  background-position-x: 95%;
+  background-position-y: center;
 }
 </style>

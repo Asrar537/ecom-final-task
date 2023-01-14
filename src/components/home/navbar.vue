@@ -11,14 +11,14 @@
 
       <div class="order-lg-2 nav-btns">
         <router-link to="/cart">
-        <button type="button" class="btn position-relative">
-          <i class="fa fa-shopping-cart"></i>
-          <span
-            class="position-absolute top-0 start-100 translate-middle badge bg"
-            >5</span
-          >
-        </button>
-      </router-link>
+          <button type="button" class="btn position-relative">
+            <i class="fa fa-shopping-cart"></i>
+            <span
+              class="position-absolute top-0 start-100 translate-middle badge bg"
+              >{{ cartItemCount }}</span
+            >
+          </button>
+        </router-link>
         <button type="button" class="btn position-relative" @click="checkLogin">
           <i class="fa fa-heart"></i>
           <span
@@ -33,11 +33,22 @@
           </router-link>
         </button>
 
-        <button type="button" id="logbtn" class="btn btn-secondary  position-relative" v-if="$store.state.user" @click="logOut">
-         Logout 
+        <button
+          type="button"
+          id="logbtn"
+          class="btn btn-secondary position-relative"
+          v-if="$store.state.user"
+          @click="logOut"
+        >
+          Logout
         </button>
-        <button type="button" id="logbtn" class="btn btn-secondary position-relative" v-if="!$store.state.user">
-        <router-link to="/login" id="log"> Login </router-link>
+        <button
+          type="button"
+          id="logbtn"
+          class="btn btn-secondary position-relative"
+          v-if="!$store.state.user"
+        >
+          <router-link to="/login" id="log"> Login </router-link>
         </button>
       </div>
 
@@ -71,7 +82,7 @@
               >categories</router-link
             >
           </li> -->
-          <li class="nav-item px-2 py-2">
+          <!-- <li class="nav-item px-2 py-2">
             <div>
               <div class="btn-group">
                 <button
@@ -104,7 +115,7 @@
                 </div>
               </div>
             </div>
-          </li>
+          </li> -->
           <!-- <li class="nav-item px-2 py-2">
                         <router-link class="nav-link text-uppercase text-dark" to="/blogs">blogs</router-link>
 
@@ -129,34 +140,35 @@
 import { computed } from "@vue/runtime-core";
 export default {
   name: "navbar",
-  data(){
-    return{
-      auth : false,
-      user : localStorage.getItem("user")
-    }
+  data() {
+    return {
+      auth: false,
+      user: localStorage.getItem("user"),
+    };
   },
   methods: {
     reloadPage() {
       setTimeout(() => {
         window.location.reload();
-      }, 10);
+      }, 100);
     },
-    logOut(){
+    logOut() {
       // localStorage.removeItem('user')
-      this.$store.commit('logout')
+      this.$store.commit("logout");
     },
-     
   },
   computed: {
     categories() {
       return this.$store.state.product_category;
     },
+    cartItemCount(){
+      return this.$store.getters.CartItemcount
+    }
   },
 
   mounted() {
-    this.$store.commit('initializeStore')
+    this.$store.commit("initializeStore");
     this.$store.dispatch("fetchProductCategory");
-  
   },
 };
 </script>
@@ -164,15 +176,13 @@ export default {
 #search {
   width: 5rem;
 }
-a{
+a {
   text-decoration: none;
-
 }
-#log{
+#log {
   color: white;
 }
-#logbtn
-{
+#logbtn {
   background: rgb(248, 52, 111);
   border: none;
 }

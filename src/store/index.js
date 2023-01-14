@@ -11,13 +11,31 @@ const store = createStore({
         sub_product_category: [],
         searchList: [],
         user: '',
+        cart: []
     },
 
-    // getters: {
-    //     // get the data
-    //     allSearchList: (state) =>
-    //         state.searchList
-    // },
+    getters: {
+        // get the data
+        CartItemcount: (state) =>
+            state.cart.length,
+        TotalPrice: (state) => {
+            let total = 0;
+            state.cart.forEach(item => {
+                total += (item.product.price - ((item.product.price * item.product.discountPercentage) / 100)) * item.quantity
+                console.log(total);
+
+            })
+            return total;
+        },
+        IncrementQty: (state) => {
+            state.cart.quantity += 1;
+        },
+        DecrementQty: (state) => {
+            state.cart.quantity -= 1;
+        }
+
+
+    },
     actions: {
         // actions to perform
 
@@ -58,6 +76,12 @@ const store = createStore({
             console.log(data);
 
             commit('login', data);
+        },
+        addProuctToCart({ commit }, { product, quantity }) {
+            commit('addToCartProduct', { product, quantity });
+        },
+        RemoveCartItem({ commit }, product) {
+            commit('RemoveCartProduct', product)
         }
 
     },
@@ -96,6 +120,41 @@ const store = createStore({
         },
         setsubProductCategory: (state, subcategory) => {
             state.sub_product_category = subcategory
+        },
+        addToCartProduct(state, { product, quantity }) {
+            let ProductIsinCart = state.cart.find(i => {
+                return i.product.id === product.id
+            });
+            if (ProductIsinCart) {
+                ProductIsinCart.quantity += quantity;
+                return;
+            }
+            state.cart.push({
+                product,
+                quantity
+            })
+        },
+        Increment(state, id) {
+            let item = state.cart.find(i => i.product.id === id);
+            if (item) {
+                item.quantity += 1;
+                return;
+            }
+
+        },
+        Decrement(state, id) {
+            let item = state.cart.find(i => i.product.id === id);
+            if (item && item.quantity > 1) {
+
+                item.quantity -= 1;
+                return;
+            }
+
+        },
+        RemoveCartProduct(state, product) {
+            state.cart = state.cart.filter(i => {
+                return i.product.id !== product.id;
+            })
         }
     },
 

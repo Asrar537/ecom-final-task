@@ -1,7 +1,7 @@
 <template>
    
   <headers/>
-  <!-- <categories/> -->
+  <categories/>
   <products/>
   <offers/>
   <blogs/>

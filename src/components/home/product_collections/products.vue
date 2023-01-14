@@ -19,7 +19,6 @@
 
                         <p class="text-capitalize mt-3 mb-1">{{products.title}}</p></router-link>
                         <span class="fw-bold d-block">${{products.price}}</span>
-                        <a href="#" class="btn btn-primary mt-3">Add to Cart</a>
                     </div>
                 </div>
 
@@ -36,6 +35,7 @@ export default{
     components:{
         spinner
     },
+   
     computed :{
         product(){
             return this.$store.state.list.products;

@@ -10,8 +10,10 @@
     <div class="col-md-8">
       <div class="card-body">
         <h5 class="card-title">{{product ? product.title : '' }}</h5>
-        <p class="card-text"><small class="text-muted"><del>${{ product.price }}  </del> ${{ product.discountPercentage }}</small></p>
+        <p class="card-text"><small class="text-muted"><del>${{ product.price }}  </del> ${{ parseInt(product.price - ((product.price * product.discountPercentage) / 100 ))}}</small></p>
         <p class="card-text">{{ product ? product.description : '' }}</p>
+        <a  class="btn btn-primary mt-3" @click="addtoCart">Add to Cart</a>
+
       </div>
     </div>
   </div>
@@ -24,6 +26,15 @@
 
 export default{
   props:['id'],
+  methods:{
+        addtoCart(){
+          console.log(this.product)
+          this.$store.dispatch('addProuctToCart', {
+            product:this.product,
+            quantity : 1, 
+          })
+        }
+    },
   computed:{
       product(){
         return this.$store.state.single_Product
