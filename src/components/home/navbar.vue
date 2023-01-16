@@ -19,7 +19,7 @@
             >
           </button>
         </router-link>
-       
+
         <button type="button" class="btn position-relative">
           <router-link to="/search">
             <i class="fa fa-search"></i>
@@ -54,12 +54,43 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse order-lg-1" id="navMenu">
+      <div class="collapse navbar-collapse order-lg-1 bg-white" id="navMenu">
         <ul class="navbar-nav mx-auto text-center">
           <li class="nav-item px-2 py-2">
             <router-link class="nav-link text-uppercase text-dark" to="/"
               >home</router-link
             >
+          </li>
+          <!-- <li class="nav-item px-2 py-2">
+            <a href="#" class="nav-link text-uppercase text-dark"
+              >categories
+            </a>
+          </li> -->
+          <li class="dropdown nav-item px-2 py-2">
+            <a href="#"
+              class="dropdown-toggle nav-link text-uppercase text-dark drop"
+              
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Categories
+          </a>
+            <ul class="dropdown-menu">
+              <div class="dropdown-item " v-for="category in categories" v-bind:key="category">
+                        <router-link :to="{name : 'sub_categories',params: {id: category}}">
+                       
+                        
+                        <div class="text-center">
+                        {{ category }}
+                    
+
+                        </div>
+                        </router-link>
+
+                    </div>
+            
+             
+            </ul>
           </li>
           <li class="nav-item px-2 py-2">
             <router-link
@@ -68,13 +99,13 @@
               >collection</router-link
             >
           </li>
-     
-          <li class="nav-item px-2 py-2">
+
+          <!-- <li class="nav-item px-2 py-2">
             <router-link class="nav-link text-uppercase text-dark" to="/about"
               >about us</router-link
             >
-          </li>
-              </ul>
+          </li> -->
+        </ul>
       </div>
     </div>
   </nav>
@@ -104,9 +135,9 @@ export default {
     categories() {
       return this.$store.state.product_category;
     },
-    cartItemCount(){
-      return this.$store.getters.CartItemcount
-    }
+    cartItemCount() {
+      return this.$store.getters.CartItemcount;
+    },
   },
 
   mounted() {
@@ -116,21 +147,32 @@ export default {
 };
 </script>
 <style scoped>
+.dropdown-menu{
+  max-height: 300px;
+  overflow-y: scroll;
+ 
+}
+.text-center{
+  color: gray;
+}
+nav {
+  height: 80px;
+}
+
 #search {
   width: 5rem;
 }
 a {
   text-decoration: none;
-
 }
 #log {
-  color: white;
+  color: rgb(248, 216, 216);
 }
 #logbtn {
   background: rgb(248, 52, 111);
   border: none;
 }
-.btn i{
+.btn i {
   color: #000;
 }
 </style>

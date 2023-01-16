@@ -164,6 +164,7 @@
   color: gray;
 }
 ul li{
-    padding: 20px 10px;
+    padding-top:20px;
+    padding-left:20px;
 }
 </style>

@@ -19,5 +19,5 @@ export default{
 <template>
   
   <navbarVue/>
-  <RouterView></RouterView>
+  <RouterView :key="$route.fullPath"></RouterView>
 </template>
