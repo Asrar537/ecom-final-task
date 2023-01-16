@@ -18,6 +18,8 @@
 
                         </div> -->
                         <!-- </router-link> -->
+                        <router-link :to="{name : 'details',params: {id: category.id}}">
+
                         <div class="special-img position-relative overflow-hidden">
                         <img :src="category ? category.images[0] :''" class="img-fluid image">
 
@@ -27,12 +29,13 @@
                     </div>
                     <div class="text-center">
                         <!-- <router-link :to="{name : 'details',params: {id: products.id}}"> -->
-
+                          
                         <p class="text-capitalize mt-3 mb-1">{{category.title}}</p>
                       <!-- </router-link> -->
-                        <span class="fw-bold d-block">${{category.price}}</span>
-                        <a href="#" class="btn btn-primary mt-3">Add to Cart</a>
+                        <span class="fw-bold d-block" id="price">${{category.price}}</span>
                     </div>
+                  </router-link>
+
                     </div>
                 </div>
             </div>
@@ -92,5 +95,7 @@ p{
 .heart{
     color: rgb(248, 52, 111);
 }
-
+#price{
+  color: black;
+}
  </style>

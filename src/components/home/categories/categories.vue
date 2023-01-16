@@ -5,10 +5,10 @@
                 <h2 class="position-relative d-inline-block"> Categories</h2>
             </div>
 
-            <div class="row g-0">
+            <div class="row">
                
-                <div class="collection-list mt-1 row gx-1 gy-3" >
-                    <div class="col-md-6 col-lg-4 col-xl-3 p-3 main-div" v-for="category in categories" v-bind:key="category">
+                <div class="collection-list mt-1 row  gy-3" >
+                    <div class="  col-xl-3  main-div" v-for="category in categories" v-bind:key="category">
                         <router-link :to="{name : 'sub_categories',params: {id: category}}">
                        
                         
@@ -59,10 +59,15 @@ export default{
 }
 </script>
 <style scoped>
-    .image{
-        width: 100%;
-        height: 200px;
-    }
+main-div{
+    display: flex;
+   
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+ 
     a{
         text-decoration: none;
 
@@ -78,7 +83,10 @@ export default{
         font-weight: bold;
         color: gray;
     } 
-    .price{
-        color: rgb(248, 52, 111);
+    .btn{
+        padding: 10px;
+    }
+    #collection{
+        padding-bottom: 0px;
     }
 </style>

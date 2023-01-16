@@ -19,14 +19,7 @@
             >
           </button>
         </router-link>
-        <button type="button" class="btn position-relative" @click="checkLogin">
-          <i class="fa fa-heart"></i>
-          <span
-            class="position-absolute top-0 start-100 translate-middle badge bg"
-            >2</span
-          >
-        </button>
-
+       
         <button type="button" class="btn position-relative">
           <router-link to="/search">
             <i class="fa fa-search"></i>
@@ -75,63 +68,13 @@
               >collection</router-link
             >
           </li>
-          <!-- <li class="nav-item px-2 py-2">
-            <router-link
-              class="nav-link text-uppercase text-dark"
-              to="/categories"
-              >categories</router-link
-            >
-          </li> -->
-          <!-- <li class="nav-item px-2 py-2">
-            <div>
-              <div class="btn-group">
-                <button
-                  class="nav-link text-uppercase text-dark bg-transparent dropdown-toggle border-0"
-                  type="button"
-                  id="triggerId"
-                  data-bs-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  categories
-                </button>
-                <div
-                  class="dropdown-menu dropdown-menu-start"
-                  aria-labelledby="triggerId"
-                >
-                  <router-link
-                    :to="{ name: 'sub_categories', params: { id: category } }"
-                    class="text-decoration-none"
-                    v-for="category in categories"
-                    v-bind:key="category"
-                  >
-                    <div
-                      class="dropdown-item text-uppercase text-dark"
-                      @click.prevent="reloadPage"
-                    >
-                      {{ category }}
-                    </div>
-                  </router-link>
-                </div>
-              </div>
-            </div>
-          </li> -->
-          <!-- <li class="nav-item px-2 py-2">
-                        <router-link class="nav-link text-uppercase text-dark" to="/blogs">blogs</router-link>
-
-                    </li> -->
+     
           <li class="nav-item px-2 py-2">
             <router-link class="nav-link text-uppercase text-dark" to="/about"
               >about us</router-link
             >
           </li>
-          <!-- Example single danger button -->
-
-          <!-- <li class="nav-item px-2 py-2 border-0">
-                        <router-link class="nav-link text-uppercase text-dark" to="/popular">popular</router-link>
-
-                    </li> -->
-        </ul>
+              </ul>
       </div>
     </div>
   </nav>
@@ -178,6 +121,7 @@ export default {
 }
 a {
   text-decoration: none;
+
 }
 #log {
   color: white;
@@ -185,5 +129,8 @@ a {
 #logbtn {
   background: rgb(248, 52, 111);
   border: none;
+}
+.btn i{
+  color: #000;
 }
 </style>

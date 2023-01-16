@@ -1,11 +1,15 @@
 <script >
 import {onMounted} from 'vue'
+    
 import navbarVue from './components/home/navbar.vue';
 export default{
   name: 'app',
   components:{
+    
     navbarVue,
   },
+  
+
   
 
  
@@ -13,6 +17,7 @@ export default{
 </script>
 
 <template>
+  
   <navbarVue/>
   <RouterView></RouterView>
 </template>

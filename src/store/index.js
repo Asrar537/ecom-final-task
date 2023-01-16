@@ -40,11 +40,12 @@ const store = createStore({
         // actions to perform
 
 
-        async fetchProductList({ commit }) {
-            const resp = await axios.get(`https://dummyjson.com/products`);
+        async fetchProductList({ commit }, page) {
+            const resp = await axios.get(`https://dummyjson.com/products?limit=10&skip=${(page - 1) *10}`);
             commit('setList', resp.data);
 
         },
+
         async fetchSingleProduct({ commit }, productId) {
             const resp = await axios.get(`https://dummyjson.com/products/${productId}`);
             commit('setSingleProduct', resp.data);
@@ -82,7 +83,8 @@ const store = createStore({
         },
         RemoveCartItem({ commit }, product) {
             commit('RemoveCartProduct', product)
-        }
+        },
+
 
     },
     mutations: {
@@ -122,17 +124,21 @@ const store = createStore({
             state.sub_product_category = subcategory
         },
         addToCartProduct(state, { product, quantity }) {
-            let ProductIsinCart = state.cart.find(i => {
-                return i.product.id === product.id
-            });
-            if (ProductIsinCart) {
-                ProductIsinCart.quantity += quantity;
-                return;
+            if (localStorage.getItem("user")) {
+                let ProductIsinCart = state.cart.find(i => {
+                    return i.product.id === product.id
+                });
+                if (ProductIsinCart) {
+                    ProductIsinCart.quantity += quantity;
+                    return;
+                }
+                state.cart.push({
+                    product,
+                    quantity
+                })
+            } else {
+                alert("You are not logged In")
             }
-            state.cart.push({
-                product,
-                quantity
-            })
         },
         Increment(state, id) {
             let item = state.cart.find(i => i.product.id === id);
@@ -155,7 +161,7 @@ const store = createStore({
             state.cart = state.cart.filter(i => {
                 return i.product.id !== product.id;
             })
-        }
+        },
     },
 
 
