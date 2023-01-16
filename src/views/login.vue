@@ -44,7 +44,8 @@
               </button>
             </div>
           </div>
-        
+        <h2>kminchelle</h2>
+        <h3>0lelplR</h3>
         </div>
       </div>
     </div>
@@ -56,8 +57,8 @@ export default {
   data() {
     return {
       form:{
-        email: "kminchelle",
-      password: "0lelplR",
+        email: "",
+      password: "",
 
       },
       
