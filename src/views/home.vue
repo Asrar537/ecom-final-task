@@ -1,7 +1,7 @@
 <template>
    
   <headers/>
-  <categories/>
+  <!-- <categories/> -->
   <products/>
   <offers/>
   <blogs/>
@@ -13,7 +13,7 @@
 <script>
 import headers from '../components/home/header.vue'
 import footers from '../components/home/footer.vue'
-import categories from '../components/home/categories/categories.vue'
+// import categories from '../components/home/categories/categories.vue'
 import products from '../components/home/product_collections/products.vue'
 import popular from '../components/home/popular.vue'
 import offers from '../components/home/offers.vue'
@@ -24,7 +24,7 @@ export default{
     name:'home',
     components:{
     headers,
-    categories,
+    // categories,
     products,
     offers,
     blogs,

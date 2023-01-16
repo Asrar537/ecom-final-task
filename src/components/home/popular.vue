@@ -9,21 +9,21 @@
                 <div class="col-md-6 col-lg-4 row g-3">
                     <h3 class="fs-5">Top Rated</h3>
                     <div class="d-flex align-items-start justify-content-start">
-                        <img src="images/top_rated_1.jpg" alt="" class="img-fluid pe-3 w-25">
+                        <img src="../../assets/images/special_product_1.jpg" alt="" class="img-fluid pe-3 w-25">
                         <div>
                             <p class="mb-0">Blue Shirt</p>
                             <span>$ 20.00</span>
                         </div>
                     </div>
                     <div class="d-flex align-items-start justify-content-start">
-                        <img src="images/top_rated_2.jpg" alt="" class="img-fluid pe-3 w-25">
+                        <img src="../../assets/images/special_product_2.jpg" alt="" class="img-fluid pe-3 w-25">
                         <div>
                             <p class="mb-0">Blue Shirt</p>
                             <span>$ 20.00</span>
                         </div>
                     </div>
                     <div class="d-flex align-items-start justify-content-start">
-                        <img src="images/top_rated_3.jpg" alt="" class="img-fluid pe-3 w-25">
+                        <img src="../../assets/images/special_product_3.jpg" alt="" class="img-fluid pe-3 w-25">
                         <div>
                             <p class="mb-0">Blue Shirt</p>
                             <span>$ 20.00</span>
@@ -34,21 +34,21 @@
                 <div class="col-md-6 col-lg-4 row g-3">
                     <h3 class="fs-5">Best Selling</h3>
                     <div class="d-flex align-items-start justify-content-start">
-                        <img src="images/best_selling_1.jpg" alt="" class="img-fluid pe-3 w-25">
+                        <img src="../../assets/images/c_formal_gray_shirt.png" alt="" class="img-fluid pe-3 w-25">
                         <div>
                             <p class="mb-0">Blue Shirt</p>
                             <span>$ 20.00</span>
                         </div>
                     </div>
                     <div class="d-flex align-items-start justify-content-start">
-                        <img src="images/best_selling_2.jpg" alt="" class="img-fluid pe-3 w-25">
+                        <img src="../../assets/images/special_product_1.jpg" alt="" class="img-fluid pe-3 w-25">
                         <div>
                             <p class="mb-0">Blue Shirt</p>
                             <span>$ 20.00</span>
                         </div>
                     </div>
                     <div class="d-flex align-items-start justify-content-start">
-                        <img src="images/best_selling_3.jpg" alt="" class="img-fluid pe-3 w-25">
+                        <img src="../../assets/images/special_product_1.jpg" alt="" class="img-fluid pe-3 w-25">
                         <div>
                             <p class="mb-0">Blue Shirt</p>
                             <span>$ 20.00</span>
@@ -59,21 +59,21 @@
                 <div class="col-md-6 col-lg-4 row g-3">
                     <h3 class="fs-5">On Sale</h3>
                     <div class="d-flex align-items-start justify-content-start">
-                        <img src="images/on_sale_1.jpg" alt="" class="img-fluid pe-3 w-25">
+                        <img src="../../assets/images/special_product_1.jpg" alt="" class="img-fluid pe-3 w-25">
                         <div>
                             <p class="mb-0">Blue Shirt</p>
                             <span>$ 20.00</span>
                         </div>
                     </div>
                     <div class="d-flex align-items-start justify-content-start">
-                        <img src="images/on_sale_2.jpg" alt="" class="img-fluid pe-3 w-25">
+                        <img src="../../assets/images/special_product_1.jpg" alt="" class="img-fluid pe-3 w-25">
                         <div>
                             <p class="mb-0">Blue Shirt</p>
                             <span>$ 20.00</span>
                         </div>
                     </div>
                     <div class="d-flex align-items-start justify-content-start">
-                        <img src="images/on_sale_3.jpg" alt="" class="img-fluid pe-3 w-25">
+                        <img src="../../assets/images/special_product_1.jpg" alt="" class="img-fluid pe-3 w-25">
                         <div>
                             <p class="mb-0">Blue Shirt</p>
                             <span>$ 20.00</span>

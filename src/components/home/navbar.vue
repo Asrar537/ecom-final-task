@@ -152,6 +152,11 @@ export default {
   overflow-y: scroll;
  
 }
+.dropdown-item:hover{
+  color:black;
+  background: rgb(248, 52, 111);
+
+}
 .text-center{
   color: gray;
 }

@@ -1,6 +1,6 @@
 <template>
-  <section id="special" class="py-3">
-    <div class="container ">
+  <section id="special" class="py-5">
+    <div class="container py-5">
       <div class="title text-center ">
         <h2 class="position-relative d-inline-block">Collection</h2>
       </div>
