@@ -90,7 +90,7 @@ body{
 
 /* header */
 #header{
-    background: url(../src/assets/images/banner-img-1.jpg) top/cover no-repeat;
+    background: url(https://firebasestorage.googleapis.com/v0/b/mudava-16714.appspot.com/o/banner-img-1.jpg?alt=media&token=2d53649c-ab2d-4011-a34f-02002d2b296c) top/cover no-repeat;
 }
 .carousel-inner h1{
     font-size: 60px;
