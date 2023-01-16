@@ -23,8 +23,10 @@
                         <div class="special-img position-relative overflow-hidden">
                         <img :src="category ? category.images[0] :''" class="img-fluid image">
 
-                        <span class="position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
-                            <i class = "fas fa-heart heart"></i>
+                        <span class="position-absolute d-flex align-items-center justify-content-center text-primary off">
+                            <!-- <i class = "fas fa-heart heart"></i> -->
+              <p>- {{ category.discountPercentage }}%</p>
+
                         </span>
                     </div>
                     <div class="text-center">
@@ -72,6 +74,14 @@
  </script>
  
  <style scoped>
+ .off p{
+  font-size: 11px;
+  color: white;
+  /* border: 1px solid pink; */
+  padding: 5px;
+  background: #f8346f;
+  border-radius: 15px;
+}
  form{
    align-items: center;
      padding: 5rem 20rem;
