@@ -20,6 +20,7 @@ import offers from '../components/home/offers.vue'
 import blogs from '../components/home/blogs.vue'
 import about from '../components/home/about.vue'
 import news from '../components/home/news.vue'
+import spinner from '../components/constants/spinner.vue'
 export default{
     name:'home',
     components:{
@@ -31,7 +32,8 @@ export default{
     about,
     popular,
     news,
-    footers
+    footers,
+    spinner
   }
 }
 </script>
