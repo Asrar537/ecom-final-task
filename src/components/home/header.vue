@@ -28,3 +28,12 @@
         name:'Header'
     }
 </script>
+<style scoped>
+
+@media(min-width: 992px){
+    .nav-item{
+        border-bottom: none;
+    }
+}
+
+ </style>

@@ -21,9 +21,10 @@
               />
 
               <span
-                class="position-absolute d-flex align-items-center justify-content-center text-primary fs-4"
+                class="position-absolute d-flex align-items-center justify-content-center text-primary off"
               >
-                <i class="fas fa-heart heart"></i>
+              <p>- {{ products.discountPercentage }}%</p>
+                <!-- <i class="fas fa-heart heart"></i> -->
               </span>
             </div>
             <div class="text-center">
@@ -81,6 +82,14 @@ export default {
 };
 </script>
 <style scoped>
+.off p{
+  font-size: 11px;
+  color: white;
+  /* border: 1px solid pink; */
+  padding: 5px;
+  background: #f8346f;
+  border-radius: 15px;
+}
 .image {
   box-shadow: 0 33px 61px -29px rgb(0 0 0/ 26%);
   height: 200px;

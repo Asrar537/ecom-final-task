@@ -9,8 +9,13 @@
     </div>
     <div class="col-md-8">
       <div class="card-body">
+        <p class="brand">{{product ? product.brand : '' }}
+        
+        </p>
+
         <h5 class="card-title">{{product ? product.title : '' }}</h5>
         <p class="card-text"><small class="text-muted"><del>${{ product.price }}  </del> ${{ parseInt(product.price - ((product.price * product.discountPercentage) / 100 ))}}</small></p>
+        <p class="card-text"><small class="text-muted"><b>Stock :</b> {{ product.stock }}  </small></p>
         <p class="card-text">{{ product ? product.description : '' }}</p>
         <a  class="btn btn-primary mt-3" @click="addtoCart">Add to Cart</a>
 
@@ -48,9 +53,16 @@ export default{
 </script>
 
 <style scoped>
-
+.brand{
+  display: flex;
+  flex-flow: row-reverse;
+  color: gray;
+  margin: 0;
+  color: rgb(248, 163, 52);
+  
+}
 #details{
-  padding: 10rem;
+  padding-top: 10rem;
 }
 .card{
   width: 80%;
@@ -62,6 +74,6 @@ img{
   
 }
 del{
-  color: re;
+  color: red;
 }
 </style>

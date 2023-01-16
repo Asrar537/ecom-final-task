@@ -5,7 +5,7 @@
         to="/"
         class="navbar-brand d-flex justify-content-between align-items-center order-lg-0"
       >
-        <img src="../../assets/images/shopping-bag-icon.png" alt="site icon" />
+        <img src="../../assets/images/shopping-bag-icon.png"  class="icon" alt="site icon" />
         <span class="text-uppercase fw-lighter ms-2">Ecom</span>
       </router-link>
 
@@ -152,10 +152,12 @@ export default {
   overflow-y: scroll;
  
 }
+.icon{
+  font-size: 10px;
+}
 .dropdown-item:hover{
   color:black;
   background: rgb(248, 52, 111);
-
 }
 .text-center{
   color: gray;

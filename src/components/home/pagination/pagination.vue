@@ -6,6 +6,7 @@
           class="btn btn-primary"
           @click="onClickFirstPage"
         :disabled="isInFirstPage"
+        id="first"
         >
           First
         </button>
@@ -34,7 +35,7 @@
         :disabled="page.isDisabled"
         :class="{ active: isPageActive(page.name) }"
         class="btn btn-primary"
-
+        id="num"
       >
         {{ page.name }}
       </button>
@@ -48,7 +49,7 @@
           @click="onClickNextPage"
         :disabled="isInLastPage"
         class="btn btn-primary"
-
+          id="next"
         >
           Next
         </button>
@@ -166,5 +167,11 @@
 ul li{
     padding-top:20px;
     padding-left:20px;
+}
+@media(max-width: 700px){
+    
+    .pagination-item  #first, #num, #next{
+      display: none;
+    }
 }
 </style>
