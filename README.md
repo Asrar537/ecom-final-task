@@ -139,6 +139,7 @@ b.   If credential are incorrect it gives error
 
 12.  If user wants to logout he can do it by clicking profile photo and on dropdown appears he can click it to  logout.
 
+#Screen shots
 
 ![Screenshot (2)](https://user-images.githubusercontent.com/60794595/212893847-535c799c-e9f5-4ee8-b0f1-9dc05649332d.png)
 
