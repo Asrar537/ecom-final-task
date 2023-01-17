@@ -1,4 +1,5 @@
 1. Abstract
+
 The fundamental building blocks of front-end programming are HTML, CSS, JS, Bootstrap, Vue3, Vuex
 with Fetch Api and deployment with Vercel . To get a handle on them, this project was developed as a
 straightforward E-commerce platform that uses restful APIs (dummy JSON) and Vue3 to integrate with
@@ -137,3 +138,14 @@ b.   If credential are incorrect it gives error
 11.  If a user wants to search a product by a specific user he has to write its name in the search bar and all relevant product will be displayed there.
 
 12.  If user wants to logout he can do it by clicking profile photo and on dropdown appears he can click it to  logout.
+
+
+![Screenshot (1)](https://user-images.githubusercontent.com/60794595/212893839-d7546341-3be3-4732-a80d-51f86c3b2d87.png)
+![Screenshot (2)](https://user-images.githubusercontent.com/60794595/212893847-535c799c-e9f5-4ee8-b0f1-9dc05649332d.png)
+![Screenshot (3)](https://user-images.githubusercontent.com/60794595/212893852-3c48b44c-a7ef-4964-bad3-2bc27ff279ef.png)
+![Screenshot (4)](https://user-images.githubusercontent.com/60794595/212893859-3271784f-2434-4050-82f2-cd9e6e018450.png)
+![Screenshot (5)](https://user-images.githubusercontent.com/60794595/212893862-17b55de8-556e-47f1-8a77-ab492d6b378c.png)
+![Screenshot (6)](https://user-images.githubusercontent.com/60794595/212893864-be860ec2-5ab8-463a-990d-9e6375dbf6a7.png)
+![Screenshot (7)](https://user-images.githubusercontent.com/60794595/212893865-3e1bfeed-c8f4-4454-adaf-cd4c1ba334b4.png)
+![Screenshot (8)](https://user-images.githubusercontent.com/60794595/212893867-d1e52e4c-e71c-4b9e-82f3-4c3d93dd590b.png)
+![Screenshot (9)](https://user-images.githubusercontent.com/60794595/212893868-c030a06e-710c-4ae9-8bb7-f31edfdb52ba.png)
