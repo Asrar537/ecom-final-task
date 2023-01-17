@@ -137,3 +137,15 @@ b.   If credential are incorrect it gives error
 11.  If a user wants to search a product by a specific user he has to write its name in the search bar and all relevant product will be displayed there.
 
 12.  If user wants to logout he can do it by clicking profile photo and on dropdown appears he can click it to  logout.
+
+#Screenshots
+
+
+![Screenshot (2)](https://user-images.githubusercontent.com/60794595/212903049-b8788741-b44b-448c-8c91-24a1656148c8.png)
+![Screenshot (3)](https://user-images.githubusercontent.com/60794595/212903084-784f6beb-ceae-4f59-8203-2e785abf6ff0.png)
+![Screenshot (4)](https://user-images.githubusercontent.com/60794595/212903094-7e9eee20-5173-4730-a80f-d3d56ba21003.png)
+![Screenshot (5)](https://user-images.githubusercontent.com/60794595/212903102-cce9bf7d-8ab2-4a58-aba9-536044ccdc78.png)
+![Screenshot (6)](https://user-images.githubusercontent.com/60794595/212903106-521ae37b-7f91-496c-9563-2c02e6c30afb.png)
+![Screenshot (7)](https://user-images.githubusercontent.com/60794595/212903113-b541480e-1103-4ccf-a1d2-915cd4b266e2.png)
+![Screenshot (8)](https://user-images.githubusercontent.com/60794595/212903117-9e744735-d390-40cb-9b4b-eec0540827b0.png)
+![Screenshot (9)](https://user-images.githubusercontent.com/60794595/212903121-75120ed8-0e88-4023-8ccf-3ae0b94844be.png)
