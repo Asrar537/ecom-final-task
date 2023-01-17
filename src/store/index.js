@@ -137,7 +137,9 @@ const store = createStore({
                     quantity
                 })
             } else {
-                alert("You are not logged In")
+                alert("You are not logged In");
+
+
             }
         },
         Increment(state, id) {

@@ -49,7 +49,7 @@
           @click="onClickNextPage"
         :disabled="isInLastPage"
         class="btn btn-primary"
-          id="next"
+          
         >
           Next
         </button>
@@ -60,8 +60,8 @@
           type="button"
           @click="onClickLastPage"
         :disabled="isInLastPage"
-        class="btn btn-primary"
-
+        class="btn btn-primary "
+id='last'
         >
           Last
         </button>
@@ -170,7 +170,7 @@ ul li{
 }
 @media(max-width: 700px){
     
-    .pagination-item  #first, #num, #next{
+    .pagination-item  #first, #num, #last{
       display: none;
     }
 }
