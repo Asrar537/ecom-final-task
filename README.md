@@ -1,10 +1,10 @@
-1. Abstract
+# Abstract
 The fundamental building blocks of front-end programming are HTML, CSS, JS, Bootstrap, Vue3, Vuex
 with Fetch Api and deployment with Vercel . To get a handle on them, this project was developed as a
 straightforward E-commerce platform that uses restful APIs (dummy JSON) and Vue3 to integrate with
 HTML components.
-2. Introduction
-2.1. Product
+# Introduction
+## Product
 The end product as completion of this project will be a E-commerce Website in which users can login and
 logout when user add and remove product from cart. In this Store we can display products with the help of
 dummy JSON and also displayed Products Details or a Categories and Categories details. And in this Store
@@ -15,7 +15,7 @@ to add and delete products
 Main object of building this application is the learning of core concepts of HTML, CSS, JS, Bootstrap,
 Vue3, Vuex with Fetch Api and deployment with vercel.
 
-3. Requirements
+# Requirements
 
 3.1. Application Requirements Fulfilled:
 1. The system shall allow the user to log in (save user data in localStorage, including token, etc).
@@ -29,7 +29,7 @@ Vue3, Vuex with Fetch Api and deployment with vercel.
 9. The system shall allow the user to delete any product.
 10. The system shall allow the user to update any product.
 
-4. Project Plan:
+# Project Plan:
 
 The project is developed with in 3 Weeks:
 
@@ -108,7 +108,7 @@ Completed
 
 Completed
 
-5. Work flow
+# Work flow
 
 1. On the start of the application home page appears.
 
